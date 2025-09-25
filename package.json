@@ -6,7 +6,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prisma:generate": "npx prisma generate --schema=./prisma/schema.prisma",
+    "postinstall": "npm run prisma:generate",
+    "prisma:start": "npx prisma studio",
+    "prisma:studio": "npx prisma studio --schema=./prisma/schema.prisma",
+    "prisma:push": "npx prisma db push"
   },
   "dependencies": {
     "@prisma/client": "^6.16.2",
@@ -14,7 +19,8 @@
     "next": "15.5.4",
     "prisma": "^6.16.2",
     "react": "19.1.0",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "swr": "^2.3.6"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
